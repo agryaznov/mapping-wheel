@@ -5,3 +5,6 @@ This is an example of visualisation of *mapping* (i.e. linkage, dependency) with
 
 Live example: [OSI to TCP/IP Layers Mapping](https://agryaznov.github.io/mapping-wheel/)
 
+## TODO
++ [ ] Draw the same in [D3js Sankey Diagram](https://bl.ocks.org/wvengen/cab9b01816490edb7083)
+
