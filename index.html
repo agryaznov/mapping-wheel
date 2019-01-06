@@ -47,12 +47,7 @@ form .btn-primary {
 <h2>OSI-to-TCP/IP Layers Mapping</h2>
 <div class="container">
 	<div class='row'>
- 	
-  <div class="col-sm-8">
-      <div id="chart_placeholder"></div>
-    </div>
-
-  <div class="col-sm-4"> 
+   <div class="col-sm-3"> 
  		data source: <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite"  target="_blank" rel="noopener noreferrer">Wikipedia</a>
  		<br>
  		visualization lib: <a href="http://www.redotheweb.com/DependencyWheel/"  target="_blank" rel="noopener noreferrer">D3JS DependencyWheel</a>
@@ -60,16 +55,27 @@ form .btn-primary {
     
     repo: <a href="https://github.com/agryaznov/mapping-wheel"  target="_blank" rel="noopener noreferrer">agryaznov/mapping-wheel</a>
 
-    <br><br>
-          <span class='badge legend legend-1'> </span> OSI Layers 
-    <p>
-    <span class='badge legend legend-2'> </span> TCP/IP Layers
  	</div>
 
-	</div>
-	
-	
+   <div class="col-sm-6">
+   </div>
+
+   <div class="col-sm-3">
+    <span class='badge legend legend-1'> </span> OSI Layers 
+    <p>
+    <span class='badge legend legend-2'> </span> TCP/IP Layers
+   </div>
+
+  </div>
+
+  <div class='row'>
+    <div class="col-sm-12">
+      <div id="chart_placeholder"></div>
+    </div> 
+  </div>
+
 </div>	
+
 
 
 <script src="js/d3.min.js"></script>
