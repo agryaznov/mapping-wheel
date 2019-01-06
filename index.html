@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+
+h1, p, li {
+  font-family: 'Rosario', sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 1em;
+  margin: 1em 0;
+}
+
+h2 { text-align: center; margin-bottom: 50px;}
+
+#chart_placeholder {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dependencyWheel {
+  font: 10px sans-serif;
+}
+
+form .btn-primary {
+  margin-top: 25px;
+}
+
+.legend {
+	min-width: 20px;
+	min-height: 15px;
+}
+
+.legend-1 { background-color: #e9988a; }
+.legend-2 { background-color: #5a9ace; }
+
+</style>
+
+</head>
+<body>
+<h2>OSI-to-TCP/IP Layers Mapping</h2>
+<div class="container">
+	<div class='row'>
+ 	<div class="col-sm-8"> 
+ 		source: <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite"  target="_blank" rel="noopener noreferrer">Wikipedia</a>
+ 		<br>
+ 		visualization lib: <a href="http://www.redotheweb.com/DependencyWheel/"  target="_blank" rel="noopener noreferrer">D3JS DependencyWheel</a>
+ 	</div>
+  	<div class="col-sm-4">
+	  	<span class='badge legend legend-1'> </span> OSI Layers 
+		<p>
+		<span class='badge legend legend-2'> </span> TCP/IP Layers
+  	</div>
+	</div>
+	
+	<div id="chart_placeholder">
+	</div>
+</div>	
+
+
+<script src="js/d3.min.js"></script>
+<script src="js/d3.dependencyWheel.js"></script>
+
+<script type="text/javascript">
+	var data = {
+	  packageNames: ['TCP:Application', 'TCP:Transport', 'TCP:Internet', 'TCP:Network Access',
+	  'OSI:Application','OSI:Presentation','OSI:Session','OSI:Transport','OSI:Network','OSI:Data Link','OSI:Physical'],
+  		matrix: 
+  				 [[0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0],
+  				 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+  				 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+  				 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+  				 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  				 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  				 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  				 [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  				 [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+  				 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+  				 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]]
+	};
+
+	var chart = d3.chart.dependencyWheel();
+	d3.select('#chart_placeholder')
+  	.datum(data)
+  	.call(chart);
+</script>
+</body>
+</html>
